@@ -1,11 +1,11 @@
 {
   "name": "emp-repo",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && node app",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -27,6 +27,7 @@
     "express": "^4.15.4",
     "mongojs": "^2.4.1",
     "mongoose": "^4.11.11",
+    "pikaday": "^1.6.1",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },

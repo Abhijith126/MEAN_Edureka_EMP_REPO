@@ -1,3 +1,67 @@
-<p>
-  employees works!
-</p>
+<br>
+<br>
+<div class="container">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Date of Birth</td>
+        <td>Department</td>
+        <td>Gender</td>
+        <td>Age</td>
+      </tr>
+    </thead>
+    <tbody >
+      <tr ngNativeValidate ng-form='employeeform'>
+        <td>
+          <input #employeeName="ngModel" type="text" class="form-control" [(ngModel)]="employee.name" name="name" placeholder="Name"
+            ng-required/>
+          <div *ngIf="employeeName.errors && (employeeName.dirty || employeeName.touched)" class="alert alert-danger">
+            <div [hidden]="!employeeName.errors.required">
+              Name is required
+            </div>
+          </div>
+        </td>
+        <td>
+          <input #employeeEmail="ngModel" type="email" [(ngModel)]="employee.email" name="email" class="form-control" placeholder="abc@xyz.com"
+          ng-required/>
+        </td>
+        <td>
+          <input type="date" #employeeDob="ngModel" name="dob" [(ngModel)]="employee.dob" class="form-control" ng-required >
+        </td>
+        <td>
+          <input #employeeDepartment="ngModel" type="text" [(ngModel)]="employee.department" name="department" class="form-control"
+            placeholder="Department" ng-required/>
+        </td>
+        <td>
+          <input #employeeGender="ngModel" type="text" [(ngModel)]="employee.gender" name="gender" class="form-control" placeholder="Gender"
+          ng-required/>
+        </td>
+        <td>
+          <input #employeeAge="ngModel" type="number" [(ngModel)]="employee.age" name="age" disabled class="form-control" placeholder="Age"
+          />
+        </td>
+        <td>
+          <button type="submit" class="btn btn-success btn-md" (click)="validateEmployee()">Add Employee</button>
+        </td>
+        <td>
+          <button type="submit" class="btn btn-success btn-md" (click)="updateEmployee(employee)">Update Employee</button>
+        </td>
+      </tr>
+      <tr *ngFor="let employee of employees">
+        <td>{{employee.name}}</td>
+        <td>{{employee.email}}</td>
+        <td>{{employee.dob | date:'yyyy-MM-dd'}}</td>
+        <td>{{employee.department}}</td>
+        <td>{{employee.gender}}</td>
+        <td>{{employee.age}}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="removeEmployee(employee._id)">Delete</button> &nbsp;&nbsp;
+          <button class="btn btn-primary btn-sm" (click)="editEmployee(employee)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
