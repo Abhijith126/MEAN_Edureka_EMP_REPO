@@ -1,11 +1,16 @@
 {
   "name": "emp-repo",
+  "description": "Edureka project- employee repository",
   "version": "1.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "6.11.3",
+    "npm": "3.10.x"
+  },
   "scripts": {
     "ng": "ng",
     "e2e": "ng e2e",
-    "lint": "ng lint", 
+    "lint": "ng lint",
     "pretest": "npm run lint",
     "start": "node app.js",
     "postinstall": "ng build --prod",
