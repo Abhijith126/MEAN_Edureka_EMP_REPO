@@ -1,4 +1,5 @@
 // Get dependencies
+const compression = require('compression');
 const express = require('express');
 const path = require('path');
 const http = require('http');
@@ -10,6 +11,7 @@ const api = require('./server/routes/employee');
 const app = express();
 
 // Parsers for POST data
+app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
