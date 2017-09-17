@@ -12,8 +12,9 @@
     "e2e": "ng e2e",
     "lint": "ng lint",
     "pretest": "npm run lint",
+    "build": "ng build && node app",
     "preinstall": "npm install -g http-server",
-    "start": "http-server dist/",
+    "start": "node app.js",
     "postinstall": "ng build --prod",
     "update": "ng update --style scss --prefix xc",
     "test": "ng test"
