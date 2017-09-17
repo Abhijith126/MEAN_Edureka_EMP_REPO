@@ -27,8 +27,7 @@ app.get('*', (req, res) => {
 /**
  * Get port from environment and store in Express.
  */
-const port = process.env.PORT || '3000';
-app.set('port', port);
+var port = process.env.PORT || 8000
 
 /**
  * Create HTTP server.
@@ -38,4 +37,6 @@ const server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-app.listen(port, () => console.log(`API running on localhost:${port}`));
+server.listen(port, function() {
+  console.log("App is running on port " + port);
+});
