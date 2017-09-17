@@ -12,7 +12,8 @@
     "e2e": "ng e2e",
     "lint": "ng lint",
     "pretest": "npm run lint",
-    "start": "node app.js",
+    "preinstall": "npm install -g http-server",
+    "start": "http-server dist/",
     "postinstall": "ng build --prod",
     "update": "ng update --style scss --prefix xc",
     "test": "ng test"
@@ -36,9 +37,7 @@
     "mongoose": "^4.11.11",
     "pikaday": "^1.6.1",
     "rxjs": "^5.4.2",
-    "zone.js": "^0.8.14"
-  },
-  "devDependencies": {
+    "zone.js": "^0.8.14",
     "@angular/cli": "1.4.2",
     "@angular/compiler-cli": "^4.2.4",
     "@angular/language-service": "^4.2.4",
