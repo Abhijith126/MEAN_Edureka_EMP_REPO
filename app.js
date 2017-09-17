@@ -27,16 +27,8 @@ app.get('*', (req, res) => {
 /**
  * Get port from environment and store in Express.
  */
-var port = process.env.PORT || 8000
+var port = process.env.PORT || 8080;
 
-/**
- * Create HTTP server.
- */
-const server = http.createServer(app);
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-server.listen(port, function() {
-  console.log("App is running on port " + port);
+var server=app.listen(port,function(req,res){
+    console.log("Catch the action at http://localhost:"+port);
 });
