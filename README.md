@@ -12,3 +12,6 @@ ng build && node app
 ## Heroku Deployment
  Deployed in heroku below is the link : Since it is a free server it is slow please be patient.!!
 https://emprepo-meanapp-abhi.herokuapp.com
+
+#To enable autocomplete for Node.js apps
+npm i -S @types/node
